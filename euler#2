@@ -1,0 +1,12 @@
+f=1
+s=2
+i=0
+sum=0
+while i<4000000:
+    i=f+s
+    f=s
+    s=i
+    if i%2==0:
+        sum+=i
+    
+print(sum+2)
