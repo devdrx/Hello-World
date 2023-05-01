@@ -1,0 +1,53 @@
+- Find Unique element [https://bit.ly/3y01Zdu ]
+- Duplicates in Array [https://bit.ly/3dm6bdZ ]
+- Array Intersection [https://bit.ly/3Il0c7n ]
+- Pair Sum [https://bit.ly/3EwlU6e ]
+- Triplet sum [https://bit.ly/3GbgVs3]
+- Sort 0 1 2 [https://bit.ly/3DfQW0s]
+
+
+1st problem
+Find Unique element [https://bit.ly/3y01Zdu ]
+int findUnique(int *arr, int size)
+{
+    //we used the XOR operator to cancel out all the numbers which were the same, leaving out the one which was left in singular (0^s = s and s^s = 0)
+    int ans = 0;
+
+    for(int i = 0; i<size; i++)
+    {
+        ans = ans^arr[i];
+    }
+    
+    return ans;
+}
+
+2nd problem
+https://leetcode.com/problems/unique-number-of-occurrences/
+
+3rd Problem
+Duplicates in Array [https://bit.ly/3dm6bdZ ]
+int findDuplicate(vector<int> &arr) 
+{
+    int ans = 0;
+
+    //XORing all array elements
+    for(int i = 0; i<arr.size(); i++)
+    {
+        ans = ans^arr[i];
+    }
+
+
+    //XORing from 1 to N-1 to the ans variable, 
+    //the numbers 1 to N-1 that have occured once got doubled and cancelled
+    //out each other, while the remaining number was the one that was 
+    //initially occuring twice got left out and stored in the ans variable
+	for(int i = 1; i<arr.size(); i++)
+    {
+        ans = ans^i;
+    }
+    return ans;
+}
+
+4th problem
+https://leetcode.com/problems/find-all-duplicates-in-an-array/
+
