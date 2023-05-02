@@ -51,3 +51,66 @@ int findDuplicate(vector<int> &arr)
 4th problem
 https://leetcode.com/problems/find-all-duplicates-in-an-array/
 
+5th Problem
+Array Intersection [https://bit.ly/3Il0c7n ]
+
+//UNOPTIMIZED SOLUTION, GOT TLE BECAUSE OF O(N^2)
+//mini optimization, to break out of operation when the arr1[i] < arr2[j] because we won't find anymore elements like that.
+
+#include <bits/stdc++.h> 
+using namespace std;
+
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
+{
+	vector<int> ans;
+	//checking karna hai
+	for(int i =0; i<n; i++){
+		int element = arr1[i];
+
+		for(int j =0; j<m; j++){
+		
+			if (element < arr2[j]) //MINI OPTIMIZATION
+			break;
+			
+			if(element == arr2[j]){
+				ans.push_back(element);
+				arr2[j]=-1; 
+				break;
+			} 
+		}
+	}
+	return ans;
+}
+
+//OPTIMIZED SOLUTION
+//used CASES to solve the problem, see the conditions in the while loop to understand more about what cases I used.
+#include <bits/stdc++.h> 
+using namespace std;
+
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
+{
+	int i = 0, j = 0;
+	vector<int> ans;
+	//checking karna hai
+	//making use of the fact that the given arrays were sorted.
+	while(i<n && j<m)
+	{
+		if(arr1[i]==arr2[j]){
+			ans.push_back(arr1[i]);
+			i++;
+			j++;
+		}
+		else if (arr1[i] <arr2[j]){
+			i++;
+		}
+		else {
+			j++;
+		}
+	}
+	
+	return ans;
+}
+
+
+6th Problem
+Pair Sum [https://bit.ly/3EwlU6e ]
