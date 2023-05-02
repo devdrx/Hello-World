@@ -144,10 +144,56 @@ Triplet sum [https://bit.ly/3GbgVs3]
 8th problem
 sort 0 1
 
-arr[i] == 0 -> i++
-arr[j] == 1 -> j--
+while arr[i] == 0 -> i++
+while arr[j] == 1 -> j--
 arr[i] == 1 and arr [j] = 0 state will be automatically reached and hence we swap them and i++ and j--
-do this until i<j
+do all this when i<j
 
+#include<iostream>
+using namespace std;
+
+void printArray(int arr[], int n) {
+    for(int i=0; i<n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+void sortOne(int arr[], int n) {
+
+    int left = 0, right = n-1;
+
+    while(left < right) {
+
+        while(arr[left] == 0 && left < right )  {
+            left++;
+        }
+
+        while(arr[right]==1 && left < right){
+            right--;
+        }
+
+        //agar yha pohoch gye ho, iska matlab
+        //arr[left]==1 and arr[right]==0
+        if(left<right)
+        {
+            swap(arr[left], arr[right]);
+            left++;
+            right--;
+        }
+    }
+
+}
+
+int main() {
+
+    int arr[8] = {1,1,0,0,0,0,1,0};
+
+    sortOne(arr, 8);
+    printArray(arr, 8);
+
+
+    return 0;
+}
 9th Problem
 - Sort 0 1 2 [https://bit.ly/3DfQW0s]
