@@ -114,3 +114,40 @@ vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, i
 
 6th Problem
 Pair Sum [https://bit.ly/3EwlU6e ]
+
+
+#include<vector>
+using namespace std;
+vector<vector<int> > pairSum(vector<int> &arr, int s){
+   vector< vector<int> > ans;
+   
+   for(int i=0;i<arr.size(); i++ )
+   {
+   		for(int j = i+1; j<arr.size(); j++) {
+        	if(arr[i] +arr[j] == s)
+            {
+            	vector<int> temp;
+                temp.push_back(min(arr[i], arr[j]));
+                temp.push_back(max(arr[i], arr[j]));
+				ans.push_back(temp);
+            }
+        }
+   }
+   sort(ans.begin(), ans.end());
+   return ans;
+}
+
+
+7th Problem
+Triplet sum [https://bit.ly/3GbgVs3]
+
+8th problem
+sort 0 1
+
+arr[i] == 0 -> i++
+arr[j] == 1 -> j--
+arr[i] == 1 and arr [j] = 0 state will be automatically reached and hence we swap them and i++ and j--
+do this until i<j
+
+9th Problem
+- Sort 0 1 2 [https://bit.ly/3DfQW0s]
