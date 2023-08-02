@@ -1,0 +1,50 @@
+command line is faster than normal GUI interface
+
+cd - change directory
+
+use \ to go into sub directories eg. cd Desktop\Videos
+
+use cd .. to go up a directory tree
+
+eg. C:\Users\DEV\Desktop\videos> cd ../..      //forward slash and another two dots for going up one more level up
+
+write commands incompletely and hit Tab anytime to scroll through possible directories as an autofill function
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+dir - gives list of all directories and files under the current directory
+
+u can also use something like     dir Desktop\dev   and it will give u directory list of all things under dev directory without moving into
+the directory itself
+
+dir /a       -        will give you all hidden directories listed
+cls          -        clears screen
+dir *.png    -        will list all files that end with .png 
+
+use up arrow and down arrow to scroll the command history
+
+just typing in the address of a file will try to open it up with the default program
+
+to find out more information about a command, the usual way to pull up the help section is to use /?
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+mkdir        -         use this to make a directory   eg.  mkdir Bacon
+rmdir        -         use this to remove a directory (if its empty only) 
+rmdir /s     -         use this to remove a directory (doable even when not empty, also, it will give a confirmation prompt
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+u can enter the absolute file address and run it directly   use ctrl + c to stop the program (exe for example) to stop running
+
+cd c:\Users\Bunky to change directory in absolute method
+
+introduction to PATH
+
+path is a list of directory addresses that the console will look for in default regardless of what u typed is in the directory itself or not
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+wmic logical disk get name      -      lists all the drive names
+E:                              -      changes pointer from some drive to E drive 
+tree                            -      lists the structure of all folders and files
+color <Hexcode XX>              -      color assigment to cmd interface
